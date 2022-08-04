@@ -45,7 +45,7 @@ const data = {
     "Coworking",
     "Piscina",
     "Funcional Gym",
-    "SUM",
+    "SUM - Sala de reuniones",
     "Zona de parrillas",
     "Centro de lavado",
   ],
@@ -87,18 +87,18 @@ const data = {
     finish: "2do Semestre 2023",
   },
   credits: [
-    {
-      title: "CONSTRUYE",
-      src: "grupo_octagon.png",
-      details:
-        "Grupo de empresas inmobiliarias con más de 20 años dedicados al desarrollo inmobiliario en Estados Unidos y actualmente desarrolla 4 proyectos en el Perú: The Grand en San Isidro, The Modern y Oficinas Boutique en Barranco y Miramar en San Bartolo.",
-    },
-    {
-      title: "INVIERTE",
-      src: "peninsula_logotipo.png",
-      details:
-        "Fondo de inversión inmobiliario con proyectos en 15 ciudades de Latinoamérica. En 11 años de trayectoria ha construido más de 60 proyectos, 1.2 millones de m2, 15mil unidades residenciales y 50mil m2 comerciales.",
-    },
+    // {
+    //   title: "CONSTRUYE",
+    //   src: "grupo_octagon.png",
+    //   details:
+    //     "Grupo de empresas inmobiliarias con más de 20 años dedicados al desarrollo inmobiliario en Estados Unidos y actualmente desarrolla 4 proyectos en el Perú: The Grand en San Isidro, The Modern y Oficinas Boutique en Barranco y Miramar en San Bartolo.",
+    // },
+    // {
+    //   title: "INVIERTE",
+    //   src: "peninsula_logotipo.png",
+    //   details:
+    //     "Fondo de inversión inmobiliario con proyectos en 15 ciudades de Latinoamérica. En 11 años de trayectoria ha construido más de 60 proyectos, 1.2 millones de m2, 15mil unidades residenciales y 50mil m2 comerciales.",
+    // },
     {
       title: "FINANCIA",
       src: "banco-de-credito-del-peru-bcp.png",
@@ -108,8 +108,8 @@ const data = {
   ],
   info: {
     showroom: "Calle Libertadores 237, San Isidro",
-    ventas: "Av. Pezet con Av. Gral. Portillo, San Isidro, Lima – Perú.",
-    email: "thegrand@grupoctagon.com",
+    ventas: "Calle Manco Segundo 225 - San Miguel, Lima – Perú.",
+    email: "valente2@grupocaral.com.pe",
     phone: "+51 938071005",
     schedule: "Lun. a dom. de  10:00 a 19:00 hrs",
   },

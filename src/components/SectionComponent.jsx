@@ -6,7 +6,7 @@ const SectionComponent = ({ children, auto, index, bg }) => (
     className={
       auto
         ? `section section${index} fp-auto-height`
-        : `section section${index} section`
+        : `section section${index}`
     }
     style={bg ? { backgroundImage: `url(${bg})` } : {}}
   >

@@ -1,10 +1,11 @@
 import React, { useRef, useState } from "react";
+import PropTypes from "prop-types";
 import data from "../data";
 import Logo from "./Logo";
 import FormResponse from "./FormResponse";
 import SimpleInput from "./SimpleInput";
 
-const Form = () => {
+const Form = ({ logo, title }) => {
   const [checkend, setCheckend] = useState(true);
   const [loading, setLoading] = useState(false);
   const [complete, setComplete] = useState(false);
@@ -42,9 +43,9 @@ const Form = () => {
 
   return (
     <div className="form">
-      <Logo />
+      {logo && <Logo />}
 
-      <h3 className="form__title">CONSULTA POR LA PROMOCIÓN</h3>
+      <h3 className="form__title">{title}</h3>
 
       <iframe
         title="iframe-hidden"
@@ -91,7 +92,7 @@ const Form = () => {
         </div>
 
         <button
-          className="btn btn-block btn-primary"
+          className="btn btn-block btn-secondary"
           type="submit"
           disabled={!checkend}
         >
@@ -106,6 +107,16 @@ const Form = () => {
       />
     </div>
   );
+};
+
+Form.propTypes = {
+  logo: PropTypes.bool,
+  title: PropTypes.string,
+};
+
+Form.defaultProps = {
+  logo: false,
+  title: "CONSULTA POR LA PROMOCIÓN",
 };
 
 export default Form;

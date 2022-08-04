@@ -7,7 +7,7 @@ import {
   Gallery,
   MainVideo,
   Features,
-  Team,
+  // Team,S
   Location,
   Credits,
   Info,
@@ -27,42 +27,44 @@ const App = () => (
     paddingTop="0px"
     paddingBottom="0px"
     touchSensitivity={15}
-    // fitToSection: false,
-
+    fitToSection={false}
     render={() => (
       <ReactFullpage.Wrapper>
         <SectionComponent auto index="1" bg="./img/fachada.jpg">
           <div>
             <HeaderTitle
               type="main"
-              sub="CIERRA PUERTAS PATRIO"
+              sub="ofertas únicas"
               title="DESCUENTO DE HASTA US$40,000"
             />
           </div>
           <div>
-            <Form />
+            <Form logo />
           </div>
         </SectionComponent>
 
         <SectionComponent auto index="2">
           <HeaderTitle
             type="primary"
-            sub="VISTAS IMPONENTES"
-            title="Diseñado Magistralmente"
+            sub="ESPACIOS DE LUJO"
+            title="Diseños únicos y elegantes"
           />
           <Gallery />
         </SectionComponent>
 
         <SectionComponent auto index="3" bg="./img/lobby-bg.jpg">
-          <HeaderTitle type="secondary" title="Valente 2: Vive tu mejor vida" />
-          <MainVideo url={data.video.url} preview={data.video.preview} />
+          <MainVideo
+            url={data.video.url}
+            preview={data.video.preview}
+            title="Vive tu mejor vida"
+          />
         </SectionComponent>
 
         <SectionComponent auto index="4">
           <HeaderTitle
             type="primary"
             sub="CARACTERÍSTICAS"
-            title="Una obra maestra de ingeniería y arquitectura"
+            title="Un proyecto de clase mundial"
           >
             <div>
               Vive la vida a tu manera y llena de momentos memorables en tu
@@ -77,7 +79,7 @@ const App = () => (
           <Features data={data.features} />
         </SectionComponent>
 
-        <SectionComponent auto index="5">
+        {/* <SectionComponent auto index="5">
           <HeaderTitle
             type="primary"
             sub="EL EQUIPO DISEÑADOR"
@@ -88,7 +90,7 @@ const App = () => (
             Echo Brickell y Waldorf Astoria, Miami.
           </HeaderTitle>
           <Team />
-        </SectionComponent>
+        </SectionComponent> */}
 
         <SectionComponent auto index="6">
           <Location
