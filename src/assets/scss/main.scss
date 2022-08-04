@@ -5,6 +5,23 @@
 @import "./buttons.scss";
 @import "./forms.scss";
 
+header {
+  position: absolute;
+  z-index: 90;
+  width: 100%;
+  height: 5.5rem;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: content-box;
+
+  img {
+    width: auto;
+    height: 100%;
+  }
+}
+
 .section {
   text-align: center;
 
@@ -18,6 +35,10 @@
     background-size: cover;
     background-position: -2rem 0;
     position: relative;
+
+    .container {
+      padding-top: 10rem;
+    }
 
     &::before {
       content: "";

@@ -177,6 +177,14 @@
   }
 }
 @media (min-width: 920px) {
+  header {
+    justify-content: flex-start;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+    padding-bottom: 5rem;
+    img {
+      padding-left: 2rem;
+    }
+  }
   .header-primary {
     text-align: left;
     width: 30rem;
