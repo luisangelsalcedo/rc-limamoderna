@@ -1,0 +1,40 @@
+.modal {
+  position: fixed;
+  inset: 0 0 0 auto;
+  background-color: rgba($color: #000000, $alpha: 1);
+  z-index: 999;
+  transition: width 0.4s ease;
+  width: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &.active {
+    width: 100%;
+  }
+
+  &-content {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &-close {
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    margin-bottom: 2rem;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    svg {
+      fill: white;
+      width: 2.5rem;
+    }
+  }
+}

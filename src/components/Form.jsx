@@ -4,8 +4,11 @@ import data from "../data";
 import Logo from "./Logo";
 import FormResponse from "./FormResponse";
 import SimpleInput from "./SimpleInput";
+import useModal from "./modal/hook/useModal";
 
 const Form = ({ logo, title }) => {
+  const { openModal } = useModal();
+
   const [checkend, setCheckend] = useState(true);
   const [loading, setLoading] = useState(false);
   const [complete, setComplete] = useState(false);
@@ -88,7 +91,13 @@ const Form = ({ logo, title }) => {
 
         <div className="form__legal">
           <input type="checkbox" onChange={handleChange} checked={checkend} />
-          Aceptas los <a href="#algo">Términos y Condiciones</a>
+          Aceptas los{" "}
+          <a
+            href="#algo"
+            onClick={() => openModal("Agregar aquí los términos y condiciones")}
+          >
+            Términos y Condiciones
+          </a>
         </div>
 
         <button
