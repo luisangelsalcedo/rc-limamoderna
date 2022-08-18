@@ -1,0 +1,114 @@
+.gallery {
+  &-card {
+    height: 25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    margin: 0.2rem auto;
+    cursor: pointer;
+
+    img {
+      height: 100%;
+    }
+
+    &:hover a {
+      background-color: rgba($color: #000000, $alpha: 0.8);
+    }
+
+    &:hover a i {
+      transition-delay: 0.2s;
+      opacity: 1;
+    }
+
+    a {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: inherit;
+      text-decoration: none;
+      background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.5) 0%,
+        rgba(0, 0, 0, 0) 100%
+      );
+      transition: background 0.2s ease;
+
+      i {
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 1.5rem;
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #333;
+
+        svg {
+          width: 40%;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 450px) {
+  .gallery {
+    &-card {
+      width: 25rem;
+    }
+  }
+}
+
+@media (min-width: 800px) {
+  .gallery {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 49.5%);
+    grid-template-rows: repeat(6, 15rem);
+    gap: 0.5rem;
+
+    &-card {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      a {
+        z-index: 99;
+      }
+      &-header {
+        z-index: 99;
+      }
+
+      &:hover {
+        img {
+          transform: translateX(-1rem);
+        }
+      }
+
+      img {
+        height: 120%;
+        position: relative;
+        transition: transform 0.2s ease;
+        transform: translateX(0);
+      }
+      &:nth-child(1) {
+        grid-column: 1;
+        grid-row: 1 / 3;
+      }
+    }
+  }
+}
+@media (min-width: 920px) {
+  .gallery {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    grid-template-rows: repeat(4, 15rem);
+    gap: 0.5rem;
+  }
+}

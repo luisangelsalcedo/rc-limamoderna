@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { ReactComponent as Search } from "../assets/svg/search-solid.svg";
+import { ReactComponent as Search } from "./asset/svg/search-solid.svg";
+import "./asset/sass/fancybox-card.scss";
 
 const FancyBoxCard = ({ title, sub, src, gallery }) => (
   <div className="gallery-card">

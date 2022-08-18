@@ -6,7 +6,7 @@ import FormResponse from "./FormResponse";
 import SimpleInput from "./SimpleInput";
 import useModal from "./modal/hook/useModal";
 
-const Form = ({ logo, title }) => {
+const Form = ({ logo, title, reference, children, labelbtn }) => {
   const { openModal } = useModal();
 
   const [checkend, setCheckend] = useState(true);
@@ -32,7 +32,6 @@ const Form = ({ logo, title }) => {
 
   const handleSubmit = () => {
     formRef.current.style.display = "none";
-
     setLoading(true);
 
     const time = setTimeout(() => {
@@ -48,7 +47,7 @@ const Form = ({ logo, title }) => {
     <div className="form">
       {logo && <Logo />}
 
-      <h3 className="form__title">{title}</h3>
+      {title && <h3 className="form__title">{title}</h3>}
 
       <iframe
         title="iframe-hidden"
@@ -89,6 +88,8 @@ const Form = ({ logo, title }) => {
           name="entry.2018751719"
         />
 
+        <input type="hidden" value={reference} name="entry.1424183869" />
+
         <div className="form__legal">
           <input type="checkbox" onChange={handleChange} checked={checkend} />
           Aceptas los{" "}
@@ -105,15 +106,13 @@ const Form = ({ logo, title }) => {
           type="submit"
           disabled={!checkend}
         >
-          CONOCE MÁS
+          {labelbtn}
         </button>
       </form>
 
-      <FormResponse
-        complete={complete}
-        loading={loading}
-        handler={handleClean}
-      />
+      <FormResponse show={complete} loading={loading} handler={handleClean}>
+        {children}
+      </FormResponse>
     </div>
   );
 };
@@ -121,11 +120,16 @@ const Form = ({ logo, title }) => {
 Form.propTypes = {
   logo: PropTypes.bool,
   title: PropTypes.string,
+  reference: PropTypes.string,
+  labelbtn: PropTypes.string,
+  children: PropTypes.node.isRequired,
 };
 
 Form.defaultProps = {
-  logo: false,
+  logo: true,
   title: "CONSULTA POR LA PROMOCIÓN",
+  reference: "default",
+  labelbtn: "CONOCE MÁS",
 };
 
 export default Form;

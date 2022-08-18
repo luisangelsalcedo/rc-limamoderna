@@ -29,4 +29,7 @@ a {
   &:disabled {
     opacity: 0.5;
   }
+  &:hover {
+    opacity: 0.9;
+  }
 }

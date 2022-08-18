@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { ReactComponent as Check } from "../assets/svg/check-circle-solid.svg";
+
 import { ReactComponent as Spiner } from "../assets/svg/circle-notch-solid.svg";
 
-const FormResponse = ({ loading, complete, handler }) => (
+const FormResponse = ({ loading, show, children }) => (
   <div className="form__response">
     {loading && (
       <>
@@ -13,29 +13,19 @@ const FormResponse = ({ loading, complete, handler }) => (
         <p>Enviando...</p>
       </>
     )}
-    {complete && (
-      <p>
-        <Check />
-        Sus datos fueron enviados
-        <br />
-        <a href="#clean" id="resetform" onClick={handler}>
-          Enviar otra respuesta
-        </a>
-      </p>
-    )}
+    {show && children}
   </div>
 );
 
 FormResponse.propTypes = {
   loading: PropTypes.bool,
-  complete: PropTypes.bool,
-  handler: PropTypes.func,
+  show: PropTypes.bool,
+  children: PropTypes.node.isRequired,
 };
 
 FormResponse.defaultProps = {
   loading: false,
-  complete: false,
-  handler: () => {},
+  show: false,
 };
 
 export default FormResponse;

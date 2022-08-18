@@ -8,7 +8,7 @@ import {
   MainVideo,
   Features,
   // Team,S
-  Location,
+  // Location,
   Credits,
   Info,
 } from "../components";
@@ -20,6 +20,8 @@ import "@fancyapps/ui/dist/fancybox.css";
 import "../assets/scss/main.scss";
 import MenuBtn from "../components/MenuBtn";
 import { ModalProvider } from "../components/modal/context/ModalProvider";
+import FormResponseRegister from "../components/FormResponseRegister";
+import Brochure from "../components/Brochure";
 
 const App = () => (
   <ModalProvider>
@@ -47,7 +49,9 @@ const App = () => (
               />
             </div>
             <div>
-              <Form logo />
+              <Form>
+                <FormResponseRegister />
+              </Form>
             </div>
           </SectionComponent>
 
@@ -101,14 +105,8 @@ const App = () => (
         </SectionComponent> */}
 
           <SectionComponent auto index="6">
-            <Location
-              map={data.location.map}
-              status={data.location.status}
-              district={data.location.district}
-              price={data.location.price}
-              offerprice={data.location.offerprice}
-              finish={data.location.finish}
-            />
+            {/* <Location map={data.location.map} /> */}
+            <Brochure map={data.location.map} />
           </SectionComponent>
 
           <SectionComponent auto index="7">

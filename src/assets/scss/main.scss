@@ -48,6 +48,7 @@
         background-color: transparent;
 
         .logo {
+          margin-top: 3rem;
           width: 11rem;
         }
 
@@ -200,64 +201,6 @@
   }
 }
 
-.gallery {
-  &-card {
-    height: 25rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-    margin: 0.2rem auto;
-    cursor: pointer;
-
-    img {
-      height: 100%;
-    }
-
-    &:hover a {
-      background-color: rgba($color: #000000, $alpha: 0.8);
-    }
-
-    &:hover a i {
-      transition-delay: 0.2s;
-      opacity: 1;
-    }
-
-    a {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: inherit;
-      text-decoration: none;
-      background: linear-gradient(
-        0deg,
-        rgba(0, 0, 0, 0.5) 0%,
-        rgba(0, 0, 0, 0) 100%
-      );
-      transition: background 0.2s ease;
-
-      i {
-        opacity: 0;
-        transition: opacity 0.4s ease;
-        width: 3rem;
-        height: 3rem;
-        border-radius: 1.5rem;
-        background-color: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #333;
-
-        svg {
-          width: 40%;
-        }
-      }
-    }
-  }
-}
 .video-title {
   display: flex;
   flex-direction: column;
@@ -482,10 +425,18 @@
     justify-content: center;
     align-items: center;
     &__item {
-      margin-bottom: 0.3rem;
+      margin-bottom: 1.2rem;
       font-weight: 200;
       b {
         font-weight: bold;
+      }
+    }
+    a {
+      text-decoration: none;
+    }
+    div + div {
+      p {
+        font-size: 1.4rem;
       }
     }
   }
@@ -508,7 +459,49 @@
     }
   }
 }
+.brochure {
+  &-content {
+    position: relative;
+    background-image: url(../img/sanMiguel.jpg);
+    background-size: cover;
+    padding: 4rem 2rem;
+    color: white;
+
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: rgba($color: #000000, $alpha: 0.7);
+      inset: 0;
+    }
+    .header-primary {
+      position: relative;
+      z-index: 10;
+      h1::after {
+        background-color: white;
+      }
+    }
+    .form {
+      position: relative;
+      z-index: 10;
+      background-color: transparent;
+      border: 0;
+    }
+  }
+  & .gallery-card {
+    width: 100%;
+    height: 20rem;
+    margin: 0;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
 .fp-watermark {
   display: none;
+}
+.modal .logo {
+  display: block;
+  margin-bottom: 0.5rem;
 }
 @import "./responsive.scss";

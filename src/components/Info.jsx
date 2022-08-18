@@ -1,43 +1,34 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Logo from "./Logo";
-import Form from "./Form";
 
-const Info = ({ showroom, ventas, email, phone, schedule }) => (
+const Info = ({ email, phone, schedule }) => (
   <footer className="info">
     <div className="info-header">
       <div className="info-list">
         <Logo />
         <div>
-          <p>Ven a visitar nuestro departamento poloto.</p>
-          {/* {showroom && (
-            <div className="info-list__item">
-              <b>Showroom:</b> {showroom}
-            </div>
-          )}
-          {ventas && (
-            <div className="info-list__item">
-              <b>Sala de ventas:</b> {ventas}
-            </div>
-          )} */}
-          {email && (
-            <div className="info-list__item">
-              <b>Correo:</b> <a href={`mailto:${email}`}>{email}</a>
-            </div>
-          )}
-          {phone && (
-            <div className="info-list__item">
-              <b>Teléfono:</b> {phone}
-            </div>
-          )}
-          {schedule && (
-            <div className="info-list__item">
-              <b>Horario:</b> {schedule}
-            </div>
-          )}
+          <p>Ven a visitar nuestro departamento piloto.</p>
+
+          <div>
+            {email && (
+              <div className="info-list__item">
+                <b>Correo:</b> <a href={`mailto:${email}`}>{email}</a>
+              </div>
+            )}
+            {phone && (
+              <div className="info-list__item">
+                <b>Teléfono:</b> <span>{phone}</span>
+              </div>
+            )}
+            {schedule && (
+              <div className="info-list__item">
+                <b>Horario:</b> <span>{schedule}</span>
+              </div>
+            )}
+          </div>
         </div>
       </div>
-      <Form />
     </div>
 
     <div className="info-legal">
@@ -85,16 +76,12 @@ const Info = ({ showroom, ventas, email, phone, schedule }) => (
 );
 
 Info.propTypes = {
-  showroom: PropTypes.string,
-  ventas: PropTypes.string,
   email: PropTypes.string,
   phone: PropTypes.string,
   schedule: PropTypes.string,
 };
 
 Info.defaultProps = {
-  showroom: "",
-  ventas: "",
   email: "",
   phone: "",
   schedule: "",

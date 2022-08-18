@@ -1,6 +1,6 @@
 import React from "react";
 import data from "../data";
-import FancyBoxCard from "./FancyBoxCard";
+import FancyBoxCard from "./fancybox-card/FancyBoxCard";
 
 const Gallery = () => {
   const { gallery } = data;
